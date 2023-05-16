@@ -16,4 +16,8 @@ class Movie
         $this->vote = $vote;
         $this->image = $image;
     }
+    public function putImg()
+    {
+        return "<img class='img-fluid ' src='$this->image'  alt='$this->title'>";
+    }
 }

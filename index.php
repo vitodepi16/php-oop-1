@@ -20,19 +20,27 @@ $movies = [
 
 <body>
     <div class="container">
-        <h1>Titolo</h1>
-        <?php foreach ($movies as $movies) { ?>
-            <div class="card">
-                <?php echo $movies->image ?>
-                <div class="card-body">
-                    <h3 class="card-title"> <?php echo $movies->title ?></h3>
-                    <h5 class="fs-6"> <?php echo $movies->origine_title ?></h5>
+        <h1>Scopri i film pi visti nelle ultime 24 ore</h1>
+        <div class="col d-flex">
+            <?php foreach ($movies as $movies) { ?>
+                <div class="card p-3 ms-3">
+                    <div class="card-img">
+                        <?php echo $movies->putImg(); ?>
+                    </div>
+
+                    <div class="card-body">
+                        <h3 class="card-title"> <?php echo $movies->title ?></h3>
+                        <h5 class="fs-6"> <?php echo $movies->origine_title ?></h5>
+                        <small> Vote:<?php echo $movies->vote ?></small>
+                        <small>Nationality: <?php echo $movies->nationality ?> </small>
+
+                    </div>
+
 
                 </div>
+            <?php } ?>
+        </div>
 
-
-            </div>
-        <?php } ?>
     </div>
 
 
